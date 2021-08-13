@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Insure my home</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../style.css'>
+    <script src='../axios.min.js'></script>
+    <script src='../site.js'></script>
+</head>
+
+<body>
+    <div class="menu">
+        <ul class="nav justify-content-end">
+            <li class="nav-item color-white">
+                <a class="nav-link" href="/login">Logout</a>
+            </li>
+            <li class="nav-item color-white">
+                <a class="nav-link" href="/register">Register</a>
+            </li>
+        </ul>
+    </div>
+    <div class="box">
+        <div class="sidebar">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="/customers">customer list</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">add customer</a>
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+            <form onsubmit="addCustomer(event)" autocomplete="off">
+                <div>
+                    <div>
+                        <label>name</label>
+                    </div>
+                    <div>
+                        <input type='text' required onchange="getCustomerNmae(value)">
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label>address</label>
+                    </div>
+                    <div>
+                        <input type='text' required onchange="getCustomerAddress(value)">
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label>property_id</label>
+                    </div>
+                    <div>
+                        <input type='text' required onchange="getCustomerPropertyId(value)">
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label>property_price</label>
+                    </div>
+                    <div>
+                        <input type='text' required onchange="getCustomerPropertyPrice(value)">
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-info">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

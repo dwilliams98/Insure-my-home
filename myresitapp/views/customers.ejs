@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Insure my home</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <script src='axios.min.js'></script>
+    <script src='site.js'></script>
+</head>
+
+<body onload="displayCustomerList()">
+    <div class="menu">
+        <ul class="nav justify-content-end">
+            <li class="nav-item color-white">
+                <a class="nav-link" href="/login">Logout</a>
+            </li>
+            <li class="nav-item color-white">
+                <a class="nav-link" href="/register">Register</a>
+            </li>
+        </ul>
+    </div>
+    <div class="box">
+        <div class="sidebar">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">customer list</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/customer/add">add customer</a>
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="dashboad_table">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>name</th>
+                            <th>address</th>
+                            <th>property_id</th>
+                            <th>property_price</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="customer_list">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="reportModal">
+        <div class="modal-content">
+            <div class="close-box">
+                <span class="close">&times;</span>
+            </div>
+            <form onsubmit="reportNow(event)" autocomplete="off">
+                <div>
+                    <div>
+                        <label>Year</label>
+                    </div>
+                    <div>
+                        <input type='text' id="report_year" required onchange="getReportYear(value)">
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label>damage_amount</label>
+                    </div>
+                    <div>
+                        <input type='text' id="report_damage_amount" required onchange="getReportDamageAmount(value)">
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label>damage_type</label>
+                    </div>
+                    <div>
+                        <input type='text' id="report_damage_type" required onchange="getReportDamageType(value)">
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-info">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        var modal = document.getElementById("reportModal");
+        var span = document.getElementsByClassName('close')[0];
+
+        span.onclick = function (event) {
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
